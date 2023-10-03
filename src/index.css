@@ -5,9 +5,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 1200px;
+  margin: auto;
 }
-
+@media (min-width:1201px) {
+  body{
+    width: 100%;
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: Monu B;
+  src: url(../public/fonts/MonumentExtended-Regular.otf);
+}
+@font-face {
+  font-family: Monts B;
+  src: url(../public/fonts/Montserrat/static/Montserrat-ExtraBold.ttf);
+}
+@font-face {
+  font-family: Monts reg;
+  src: url(../public/fonts/Montserrat/static/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: Monu reg-s;
+  src: url(../public/fonts/Montserrat/static/Montserrat-SemiBold.ttf);
 }

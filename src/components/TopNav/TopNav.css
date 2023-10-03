@@ -1,0 +1,37 @@
+nav h1{
+    font-family: Monu B;
+    font-size: 12px;
+    background: linear-gradient( to right, #9c273c, #6d279c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+nav h1 img{
+    width: 30px;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+nav button{
+    /* background-color: #279c31; */
+    background: linear-gradient( to right, #9c273c, #6d279c);
+    padding: 10px 20px;
+    border: none;
+    height: fit-content;
+    border-radius: 10px;
+    color: white;
+    font-family: Monts B;
+}
+
+@media (max-width: 620px){
+    nav{
+        border: 1px solid;
+        width: 100%;
+    }
+}

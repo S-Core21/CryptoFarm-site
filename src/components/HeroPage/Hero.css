@@ -1,0 +1,54 @@
+.hero h1 {
+  font-family: Monu B;
+  font-size: 30px;
+  line-height: 50px;
+}
+.hero header {
+  width: 50%;
+}
+.hero main {
+  width: 50%;
+}
+.hero p {
+  font-family: Monts reg;
+  font-size: 20px;
+  font-weight: 400;
+}
+.hero {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.hero main img {
+  border-radius: 10px;
+}
+.hero button {
+  background-color: #279c31;
+  background: linear-gradient(to right, #9c273c, #6d279c);
+  padding: 10px 20px;
+  border: none;
+  height: fit-content;
+  border-radius: 10px;
+  color: white;
+  font-family: Monts B;
+}
+
+@media (max-width: 620px) {
+  .hero {
+    border: 1px solid;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .hero header {
+    width: 80%;
+  }
+  .hero main {
+    width: 100%;
+  }
+  .hero main img {
+    border-radius: 10px;
+    width: 400px;
+  }
+}
