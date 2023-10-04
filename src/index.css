@@ -13,6 +13,12 @@ body {
     width: 100%;
   }
 }
+@media (max-width:620px) {
+  body{
+    width: 100%;
+    overflow-y: scroll;
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

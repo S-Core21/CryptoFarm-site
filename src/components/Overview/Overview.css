@@ -53,9 +53,8 @@
         flex-direction: column;
         flex-wrap: nowrap;
         align-items: center;
-        border: 1px solid;
         padding: 0;
-        gap: .5rem !important;
+        gap: 1rem !important;
         /* ove */
     }
     .overview{
@@ -70,8 +69,12 @@
     }
     .overview p{
         font-size: 14px;
+        line-height: 24px;
     }
     .overview ul li{
-        width: 97%;
+        width: 90%;
+        font-size: 14px;
+        line-height: 24px;
+        margin-block: 0;
     }
 }

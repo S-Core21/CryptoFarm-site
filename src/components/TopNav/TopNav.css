@@ -31,7 +31,6 @@ nav button{
 
 @media (max-width: 620px){
     nav{
-        border: 1px solid;
         width: 100%;
     }
 }
