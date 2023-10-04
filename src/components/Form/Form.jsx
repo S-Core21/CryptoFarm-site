@@ -15,7 +15,7 @@ const Form = () => {
         firstname: '',
         lastname: '',
         email: '',
-        phno: 0,
+        phno: '',
         gender: '',
         occupation: '',
         knowlegde: '',
@@ -30,13 +30,13 @@ const Form = () => {
         publicKey: 'pk_test_3303cd23fcec00465c9596ec32a2cb7b66554316'
     }
     const body = {
-        firstname: 'a',
-        lastname: 'a',
-        email: 'a',
-        phno: 0,
-        gender: 'a',
-        occupation: 'a',
-        knowlegde: 'a',
+        firstname: formData.firstname,
+        lastname: formData.lastname,
+        email: formData.email,
+        phno: formData.phno,
+        gender: formData.gender,
+        occupation: formData.occupation,
+        knowlegde: formData.knowlegde,
         amt: 11000
     }
 
@@ -84,17 +84,17 @@ const Form = () => {
                     Get Started
                 </h1>
             </header>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor='firstname'>
                         First Name:
                     </label>
                     <input
-                        required
                         type="text"
                         name='firstname'
                         value={formData.firstname}
                         onChange={handleChnage}
+                        required
                     />
                 </div>
                 <div>
@@ -102,11 +102,11 @@ const Form = () => {
                         Last Name:
                     </label>
                     <input
-                        required={true}
                         type="text"
                         name='lastname'
                         value={formData.lastname}
                         onChange={handleChnage}
+                        required={true}
                     />
                 </div>
                 <div>
@@ -114,11 +114,11 @@ const Form = () => {
                         Email:
                     </label>
                     <input
-                        required={true}
                         type="text"
                         name='email'
                         value={formData.email}
                         onChange={handleChnage}
+                        required={true}
                     />
                 </div>
                 <div>
@@ -126,11 +126,11 @@ const Form = () => {
                         Phone Number:
                     </label>
                     <input
-                        required={true}
                         type="number"
                         name='phno'
                         value={formData.phno}
                         onChange={handleChnage}
+                        required={true}
                     />
                 </div>
                 <div>
@@ -148,11 +148,11 @@ const Form = () => {
                         Occupation:
                     </label>
                     <input
-                        required={true}
                         type="text"
                         name='occupation'
                         value={formData.occupation}
                         onChange={handleChnage}
+                        required={true}
                     />
                 </div>
                 <div>
@@ -160,11 +160,11 @@ const Form = () => {
                         Knowlegde:
                     </label>
                     <input
-                        required={true}
                         type="text"
                         name='knowlegde'
                         value={formData.knowlegde}
                         onChange={handleChnage}
+                        required={true}
                     />
                 </div>
                 <div>
@@ -172,16 +172,16 @@ const Form = () => {
                         Amount:
                     </label>
                     <input
-                        required={true}
                         type="text"
                         name='amt'
                         value={formData.amt}
                         onChange={handleChnage}
+                        required={true}
                         readOnly={true}
                     />
                 </div>
                   <div>
-                    <button type='submit' className='form-sub' onClick={handleSubmit}>
+                    <button type='submit' className='form-sub'>
                         {success ? 'Loading..': 'Proceed'}
                     </button>
                 </div>
