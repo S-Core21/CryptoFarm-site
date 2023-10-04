@@ -14,6 +14,7 @@ const Footer = () => {
         <ul>
             <li><img src="/images/twi.png" alt="" /></li>
             <li><img src="/images/fb.png" alt="" /></li>
+            <li><img src="/images/mail.png" alt="" /></li>
         </ul>
         </main>
         <main>

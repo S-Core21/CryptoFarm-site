@@ -3,13 +3,11 @@ import './Form.css'
 import { useState } from 'react'
 import { PaystackButton } from 'react-paystack'
 import axios from 'axios'
-// import { useCookies } from 'react-cookie'
-// import Cookies from 'js-cookie'
+import { Link } from 'react-router-dom'
 
 const Form = () => {
-
-
     const [payment, setPayment] = useState(false)
+    const [paymentSuccess, setPaymentSuccess] = useState(false)
     const [success, setSuccess] = useState(false)
     const [formData, setFormData] = useState({
         firstname: '',
@@ -19,6 +17,7 @@ const Form = () => {
         gender: '',
         occupation: '',
         knowlegde: '',
+        txid: '',
         amt: 11000
     })
 
@@ -44,17 +43,19 @@ const Form = () => {
         e.preventDefault()
         setSuccess(true)
             axios.post('https://cryptofarmer-api.onrender.com/users', body)
-                .then(res => {
-                    console.log(res)
-                    setPayment(true)
-                    setSuccess(false)
-                })
-                .catch(err => {
-                    console.log(err)
-                    setSuccess(false)
-                    setPayment(false)
-                })
-
+            .then(res => {
+                console.log(res)
+                setPayment(true)
+                setSuccess(false)
+                setPaymentSuccess(true)
+            })
+            .catch(err => {
+                console.log(err)
+                setSuccess(false)
+                setPayment(false)
+                setPaymentSuccess(false)
+            })
+        
     }
 
     const handleSuccess = (response) => {
@@ -73,8 +74,6 @@ const Form = () => {
             [e.target.name]: e.target.value
         })
     }
-
-
 
 
     return (
@@ -180,33 +179,56 @@ const Form = () => {
                         readOnly={true}
                     />
                 </div>
-                  <div>
+                <div>
+                    {
+                        !payment && <PaystackButton
+                            text='Make Payment'
+                            className='paystack'
+                            callback={handleSuccess}
+                            close={handleError}
+                            disabled={false}
+                            embed={false}
+                            reference={config.reference}
+                            email={config.email}
+                            amount={config.amount}
+                            publicKey={config.publicKey}
+                            tag='button'
+                        />
+                    }
+                </div>
+                <div>
+                    <label htmlFor='amt'>
+                        Transaction reference:
+                    </label>
+                    <input
+                        type="number"
+                        name='txid'
+                        value={formData.txid}
+                        onChange={handleChnage}
+                        required={true}
+                    />
+                </div>
+                <small style={{ color: 'gray' }}>
+                    Check your mail for payment reciept and transaction reference
+                </small>
+                <div>
                     <button type='submit' className='form-sub'>
-                        {success ? 'Loading..': 'Proceed'}
+                        {success ? 'Loading..' : 'Proceed'}
                     </button>
                 </div>
-                
-               
             </form>
-            <div>
-                {
-                    payment &&  <PaystackButton
-                    text='Make Payment'
-                    className='paystack'
-                    callback={handleSuccess}
-                    close={handleError}
-                    disabled={false}
-                    embed={false}
-                    reference={config.reference}
-                    email={config.email}
-                    amount={config.amount}
-                    publicKey={config.publicKey}
-                    tag='button'
-                />
-                }
-               
+            {
+                paymentSuccess && <div className='modal'>
+                <h2>
+                    Registration Complete
+                </h2>
+                <Link>
+                <img src="/images/whatsapp.png" alt="" />
+                    Click to Join Whatsapp Group
+                </Link>
             </div>
-            {success}
+            }
+            
         </div>
     )
 }
