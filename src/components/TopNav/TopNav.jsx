@@ -1,5 +1,6 @@
 import React from 'react'
 import './TopNav.css'
+import { Link } from 'react-router-dom'
 
 const TopNav = () => {
   return (
@@ -9,7 +10,9 @@ const TopNav = () => {
             CryptoFarm
         </h1>
         <button>
-            Learn More
+          <a href='#overview'>
+          Learn More
+          </a>       
         </button>
     </nav>
   )

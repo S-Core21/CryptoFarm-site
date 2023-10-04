@@ -28,6 +28,10 @@ nav button{
     color: white;
     font-family: Monts B;
 }
+nav button a{
+    text-decoration: none;
+    color: inherit;
+}
 
 @media (max-width: 620px){
     nav{

@@ -8,20 +8,20 @@ import Footer from '../components/Footer/Footer'
 
 const Home = () => {
   return (
-    <div className="App">
+    <div className="App" style={{scrollBehavior: 'smooth'}}>
     <section>
     <TopNav/>
     </section>
     <section>
       <Hero/>
     </section>
-    <section>
+    <section id='overview'>
       <Overview/>
     </section>
     <section>
       <Duration/>
     </section>
-    <section>
+    <section id='register'>
       <Form/>
     </section>
     <section>

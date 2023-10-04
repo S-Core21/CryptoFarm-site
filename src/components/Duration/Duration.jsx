@@ -11,7 +11,7 @@ const Duration = () => {
         </header>
         <main>
             <div>
-                <h3>Register Today</h3>
+                <h3><a href="#register">Register Today</a></h3>
             </div>
             <div>
             <ul>

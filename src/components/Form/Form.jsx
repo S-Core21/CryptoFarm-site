@@ -78,7 +78,7 @@ const Form = () => {
 
 
     return (
-        <div className='form-con'>
+        <div className='form-con' >
             <header>
                 <h1>
                     Get Started

@@ -13,7 +13,9 @@ const Hero = () => {
             </p>
             <br/>
             <button>
+                <a href="#register">
                 Register Now
+                </a>
             </button>
         </header>
         <main>
